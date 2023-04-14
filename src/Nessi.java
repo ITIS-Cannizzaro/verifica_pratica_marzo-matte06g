@@ -79,18 +79,22 @@ public class Nessi
 		}
 		return a;
 	}
+	
+	// Accordino: la soluzione è un po' più complicata del necessario ma funziona: 2pt 
 	static void minimodiArray(int[]a)
 	{
 		riempiArray(a);
 		int minimo = a[0];
+		// int posizioneMinimo = 0; // Accordino:  Potevi creare questa variabile
 		for(int i = 0; i < a.length; i++)
 		{
 			if(a[i]<minimo)
 			{
 				minimo = a[i];
+				// posizioneMinimo = i; // Accordino:  e salvarti anche l'indice del minimo
 			}
 		}
-		for(int i = 0; i < a.length; i++)
+		for(int i = 0; i < a.length; i++) // così questo ciclo potevi evitarlo 
 		{
 			if(a[i]==minimo)
 			{
@@ -98,8 +102,10 @@ public class Nessi
 				i = a.length -1;
 			}
 		}
-		
+		// ma va bene lo stesso :)
 	}
+	
+	// Accordino: questo è andato maluccio: 0pt
 	static void parolemisteriose(String[]s)
 	{
 		for(int i = 0; i < s.length; i ++)
@@ -107,9 +113,9 @@ public class Nessi
 			int contatore = 0;
 			for(int j = 1; j < 4 && contatore == 0;j++)
 			{
-				System.out.println("Tentativo numero " + (j) + ":");
-				String k = in.nextLine();
-				if(s[i].equals(k))
+				System.out.println("Tentativo numero " + (j) + ":"); 
+				String k = in.nextLine();// Accordino: facendo così, qui inserisci una parola nella variabile k
+				if(s[i].equals(k)) // Accordino: e qui controlli se è uguale ad una delle 5, invece dovevi confrontare k con tutte e 5!   
 				{
 					System.out.println("Stringa indovinata!");
 					contatore +=1;
@@ -122,6 +128,8 @@ public class Nessi
 			}
 		}
 	}
+	
+	// Accordino: funziona, ma ti consiglio di stampare gli array in orizzontale per guardarli meglio! 2pt 
 	static void stampapari(int[]x)
 	{
 		riempiArraydue(x);
@@ -145,6 +153,8 @@ public class Nessi
 			}
 		}
 	}
+	
+	// Accordino: ottimo! 3pt 
 	static int[]ArrayDivisori(int[]a, int[]b)
 	{
 		riempiArraydue(a);
@@ -173,6 +183,8 @@ public class Nessi
 		y[a]=y[b];
 		y[b]=temp;
 	}
+	
+	// Accordino: questo è giusto, ti sei dimenticato di riempire l'array e hai stampato tutto attaccato! 2 pt
 	static void zigzag(int[]a)
 	{
 		for(int i = 0, j = a.length-1; i < a.length / 2 - 1 && j > a.length/2 - 1; i++, j--)
